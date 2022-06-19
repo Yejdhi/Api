@@ -17,13 +17,13 @@ namespace ProjectEarthServerAPI.Controllers
 	[Route("api/v{version:apiVersion}/player/profile/{profileID}")]
 	public class SigninController : ControllerBase
 	{
-		[Authorize]
+		/*[Authorize]
 		[HttpGet]
 		public async Task<ContentResult> Get(string profileID)
 		{
 			var response = new ProfileResponse(ProfileUtils.ReadProfile(profileID));
 			return Content(JsonConvert.SerializeObject(response), "application/json");
-		}
+		}*/
 
 
 		[HttpPost]

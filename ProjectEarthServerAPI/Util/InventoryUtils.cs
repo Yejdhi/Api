@@ -162,6 +162,7 @@ namespace ProjectEarthServerAPI.Util
 							seen = new InventoryResponse.DateTimeOn {on = DateTime.UtcNow},
 							unlocked = new InventoryResponse.DateTimeOn {on = DateTime.UtcNow}
 						};
+						inv.result.nonStackableItems.Add(itementry);
 					}
 
 					JournalUtils.UpdateEntry(playerId, itementry);
@@ -185,6 +186,7 @@ namespace ProjectEarthServerAPI.Util
 							seen = new InventoryResponse.DateTimeOn() {on = DateTime.UtcNow},
 							unlocked = new InventoryResponse.DateTimeOn() {on = DateTime.UtcNow}
 						};
+						inv.result.stackableItems.Add(itementry);
 					}
 
 					JournalUtils.UpdateEntry(playerId, itementry);

@@ -1,5 +1,5 @@
 ## Project Earth Api
-*The core API for Project Earth*
+The core API for Project Earth
 
 ## What does this component do?
 The core API handles the bulk of game functionality - pretty much everything that isn't direct AR gameplay is done here.
@@ -13,8 +13,10 @@ The core API handles the bulk of game functionality - pretty much everything tha
 
 ### Getting all the parts
 
-- A built copy of the Api (you are in this repo), which you can download from [Release](https://github.com/ENDERMANYK/Api/releases)
+- A built copy of the Api, which you can download from [Release](https://github.com/ENDERMANYK/Api/releases)
 - The [ApiData](https://github.com/Project-Earth-Team/ApiData) repo, you'll also need the Minecraft Earth resource pack file, renamed to `vanilla.zip` and placed in the `resourcepacks` subfolder of the ApiData repo. You can procure the resourcepack from [here](https://cdn.mceserv.net/availableresourcepack/resourcepacks/dba38e59-091a-4826-b76a-a08d7de5a9e2-1301b0c257a311678123b9e7325d0d6c61db3c35), provided you're setting up before June 30th, 2021. Rename your clone to `data`, and place it next to your Api executable.
+
+### Attention: Only do this if you want play AR game instead setup a server.
 - Our fork of [Cloudburst](https://github.com/Project-Earth-Team/Server). Builds of this can be found [here](https://ci.rtm516.co.uk/job/ProjectEarth/job/Server/job/earth-inventory/). This jar can be located elsewhere from the Api things.
 - Run Cloudburst once to generate the file structure.
 - In the plugins folder, you'll need [GenoaPlugin](https://github.com/Project-Earth-Team/GenoaPlugin), and [GenoaAllocatorPlugin](https://github.com/Project-Earth-Team/GenoaAllocatorPlugin). The CI for this can be found [here](https://ci.rtm516.co.uk/job/ProjectEarth/job/GenoaPlugin/job/master/) and [here](https://ci.rtm516.co.uk/job/ProjectEarth/job/GenoaAllocatorPlugin/job/main/). **Note: make sure to rename your GenoaAllocatorPlugin.jar to ZGenoaAllocatorPlugin.jar, or you will run into issues with class loading** 

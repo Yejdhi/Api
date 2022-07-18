@@ -1,0 +1,3 @@
+[submodule "ProjectEarthServerAPI/data"]
+	path = ProjectEarthServerAPI/data
+	url = https://github.com/ENDERMANYK/ApiData.git

@@ -177,8 +177,14 @@ namespace ProjectEarthServerAPI.Util
 				if (item.guid != Guid.Empty)
 				{
 					var catalogItem = StateSingleton.Instance.catalog.result.items.Find(match => match.id == item.guid);
-					hotbar[i] = new InventoryResponse.Hotbar {count = item.count, id = item.guid, instanceId = item.instance_data.id};
-
+					if (item.instance_data != null)
+					{
+						hotbar[i] = new InventoryResponse.Hotbar { count = item.count, id = item.guid, instanceId = item.instance_data.id };
+					}
+					else
+					{
+						hotbar[i] = new InventoryResponse.Hotbar { count = item.count, id = item.guid, instanceId = null };
+					}
 					response[i] = new HotbarTranslation {count = item.count, identifier = catalogItem.item.name, meta = catalogItem.item.aux, slotId = i};
 				}
 				else

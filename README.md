@@ -1,46 +1,44 @@
 ## Project Earth Api
-The core API for Project Earth
+Project Earth 的核心API
 
-## What does this component do?
-The core API handles the bulk of game functionality - pretty much everything that isn't direct AR gameplay is done here.
+## 他能做什么？
+核心API处理大部分游戏功能 - 几乎所有不是直接AR游戏玩法的东西都在这里完成。
 
-## Building
- - Git this repository
- - Open the sln in your IDE of choice
- - Build & run
+## 构建
+ - Git 这个库
+ - 用你选择的IDE打开sln
+ - 构建 & 运行
 
-## Setting up the Project Earth server infrastructure.
+## 设置 Project Earth 服务器。
 
-### Getting all the parts
+### 获取所有
 
-- A built copy of the Api, which you can download from [Release](https://github.com/ENDERMANYK/Api/releases)
-- The [ApiData](https://github.com/ENDERMANYK/ApiData) repo, you'll also need the Minecraft Earth resource pack file, renamed to `vanilla.zip` and placed in the `resourcepacks` subfolder of the ApiData repo. 
-- You can procure the resourcepack from [here](https://web.archive.org/web/20210624200250if_/https://cdn.mceserv.net/availableresourcepack/resourcepacks/dba38e59-091a-4826-b76a-a08d7de5a9e2-1301b0c257a311678123b9e7325d0d6c61db3c35).
+- 你可以在[Release](https://github.com/ENDERMANYK/Api/releases)下载api的副本。
+- The [ApiData](https://github.com/ENDERMANYK/ApiData) repo, 你还需要 Minecraft Earth 资源包文件, 重命名为`vanilla.zip`放到ApiData子文件夹`resourcepacks` 中。
+- 你可以在[此处](https://web.archive.org/web/20210624200250if_/https://cdn.mceserv.net/availableresourcepack/resourcepacks/dba38e59-091a-4826-b76a-a08d7de5a9e2-1301b0c257a311678123b9e7325d0d6c61db3c35)获取资源包。
 
-### Attention: Only do this if you want play AR game instead setup a server.
-- Our fork of [Cloudburst](https://github.com/Project-Earth-Team/Server). Builds of this can be found [here](https://ci.rtm516.co.uk/job/ProjectEarth/job/Server/job/earth-inventory/). This jar can be located elsewhere from the Api things.
-- Run Cloudburst once to generate the file structure.
-- In the plugins folder, you'll need [GenoaPlugin](https://github.com/Project-Earth-Team/GenoaPlugin), and [GenoaAllocatorPlugin](https://github.com/Project-Earth-Team/GenoaAllocatorPlugin). The CI for this can be found [here](https://ci.rtm516.co.uk/job/ProjectEarth/job/GenoaPlugin/job/master/) and [here](https://ci.rtm516.co.uk/job/ProjectEarth/job/GenoaAllocatorPlugin/job/main/). **Note: make sure to rename your GenoaAllocatorPlugin.jar to ZGenoaAllocatorPlugin.jar, or you will run into issues with class loading** 
+### 注意: 只有你想要玩AR游戏而不是设置服务器时才执行此操作
+- 我们的[Cloudburst](https://github.com/Project-Earth-Team/Server)分支。 可以在[这里](https://ci.rtm516.co.uk/job/ProjectEarth/job/Server/job/earth-inventory/)找到，这个jar可以位于api的其他地方。
+- 运行一次 Cloudburst 以生成文件。
+- 在plugins文件夹, 你需要 [GenoaPlugin](https://github.com/Project-Earth-Team/GenoaPlugin), 和 [GenoaAllocatorPlugin](https://github.com/Project-Earth-Team/GenoaAllocatorPlugin). 这 CI 可以在 [这里](https://ci.rtm516.co.uk/job/ProjectEarth/job/GenoaPlugin/job/master/) 和 [这里](https://ci.rtm516.co.uk/job/ProjectEarth/job/GenoaAllocatorPlugin/job/main/)找到。 **注: 务必重命名 GenoaAllocatorPlugin.jar 为 ZGenoaAllocatorPlugin.jar, 否则你将会遇到Class加载问题** 
 
-### Setting up
-- on the Api side
-- go to `data/config/apiconfig.json`, and add the following at the end of file:
+### 设置
+- 在Api方：
+- 转到`data/config/apiconfig.json`, 然后在末尾添加以下内容:
 ```json
 "multiplayerAuthKeys": {
-        "Your cloudburst server IP here": "the same key you put in key.txt earlier"
+        "你的cloudburst 服务器 IP": "和key.txt文件中相同的key"
  }
 ```
-- Also change the ```"baseServerIP"``` to your local IPV4. Sample:```"baseServerIP": "http://192.168.1.1"```
-- On the cloudburst side:
-- within the `plugins` folder, create a `GenoaAllocatorPlugin` folder, and in there, make a `key.txt` file containing a base64 encryption key. An example key is
- ```
+- 同时更改 ```"baseServerIP"``` 为你的IPV4地址。 示例:```"baseServerIP": "http://192.168.1.1"```
+- 在Cloudburst 方面：
+- 在 `plugins` 文件夹中，创建 ```GenoaAllocatorPlugin``` 文件夹, 在此文件夹中，创建一个包含base64加密密钥的 `key.txt` 文件。 一个示例key：
+```
 /g1xCS33QYGC+F2s016WXaQWT8ICnzJvdqcVltNtWljrkCyjd5Ut4tvy2d/IgNga0uniZxv/t0hELdZmvx+cdA==
 ```
-- edit the cloudburst.yml file, and change the core api url to the url your Api will be accessible from. Sample:```earth-api: "192.168.1.1/1/api"```
+- 修改 cloudburst.yml 文件, 并将核心 API URL 更改为可从中获取 API 的 URL。 示例:```earth-api: "192.168.1.1/1/api"```
 
-- Start up the Api
-- Start up cloudburst. After a short while the Api should mention a server being connected.
-- If you run into issues, retrace your steps, or [contact us on discord](https://discord.gg/Zf9aYZACU4)
-- If everything works, your next challenge is to get Minecraft Earth to talk to your Api. If you're on Android, you can utilize [our patcher](https://github.com/Project-Earth-Team/PatcherApp), The CI for this can be found [here](https://ci.rtm516.co.uk/job/ProjectEarth/job/PatcherApp/job/master/lastBuild/). If you're on IOS, the only way to accomplish this without jailbreak is to utilize a DNS, such as bind9. Setup for that goes beyond the scope of this guide.
-
-
+- 启动Api
+- 启动Cloudburst. 一会后 Api 会提到一个服务器被连接。
+- 如果你遇到问题, 按照步骤重试, 或者在[Discord](https://discord.gg/Zf9aYZACU4)上联系我们。
+- 如果一切正常, 下一个挑战是让Minecraft Earth连接到api。如果你使用的是安卓, 你可以使用我们的 [patcher](https://github.com/Project-Earth-Team/PatcherApp), 可以在[这里](https://ci.rtm516.co.uk/job/ProjectEarth/job/PatcherApp/job/master/lastBuild/)找到CI。 如果你使用的是IOS, 唯一不用越狱的方法是使用DNS, 例如 bind9。设置这个超出了本指南的范围。

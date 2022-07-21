@@ -14,7 +14,7 @@ The core API handles the bulk of game functionality - pretty much everything tha
 ### Getting all the parts
 
 - A built copy of the Api, which you can download from [Release](https://github.com/ENDERMANYK/Api/releases)
-- The [ApiData](https://github.com/Project-Earth-Team/ApiData) repo, you'll also need the Minecraft Earth resource pack file, renamed to `vanilla.zip` and placed in the `resourcepacks` subfolder of the ApiData repo. 
+- The [ApiData](https://github.com/ENDERMANYK/ApiData) repo, you'll also need the Minecraft Earth resource pack file, renamed to `vanilla.zip` and placed in the `resourcepacks` subfolder of the ApiData repo. 
 - You can procure the resourcepack from [here](https://web.archive.org/web/20210624200250if_/https://cdn.mceserv.net/availableresourcepack/resourcepacks/dba38e59-091a-4826-b76a-a08d7de5a9e2-1301b0c257a311678123b9e7325d0d6c61db3c35).
 
 ### Attention: Only do this if you want play AR game instead setup a server.
@@ -23,19 +23,21 @@ The core API handles the bulk of game functionality - pretty much everything tha
 - In the plugins folder, you'll need [GenoaPlugin](https://github.com/Project-Earth-Team/GenoaPlugin), and [GenoaAllocatorPlugin](https://github.com/Project-Earth-Team/GenoaAllocatorPlugin). The CI for this can be found [here](https://ci.rtm516.co.uk/job/ProjectEarth/job/GenoaPlugin/job/master/) and [here](https://ci.rtm516.co.uk/job/ProjectEarth/job/GenoaAllocatorPlugin/job/main/). **Note: make sure to rename your GenoaAllocatorPlugin.jar to ZGenoaAllocatorPlugin.jar, or you will run into issues with class loading** 
 
 ### Setting up
-
-On the cloudburst side:
-- within the `plugins` folder, create a `GenoaAllocatorPlugin` folder, and in there, make a `key.txt` file containing a base64 encryption key. An example key is
- ```
-/g1xCS33QYGC+F2s016WXaQWT8ICnzJvdqcVltNtWljrkCyjd5Ut4tvy2d/IgNga0uniZxv/t0hELdZmvx+cdA==
-```
-- edit the cloudburst.yml file, and chan ge the core api url to the url your Api will be accessible from
-- on the Api side, go to `data/config/apiconfig.json`, and add the following:
+- on the Api side
+- go to `data/config/apiconfig.json`, and add the following at the end of file:
 ```json
 "multiplayerAuthKeys": {
         "Your cloudburst server IP here": "the same key you put in key.txt earlier"
  }
 ```
+- Also change the ```"baseServerIP"``` to your local IPV4. Sample:```"baseServerIP": "http://192.168.1.1"```
+- On the cloudburst side:
+- within the `plugins` folder, create a `GenoaAllocatorPlugin` folder, and in there, make a `key.txt` file containing a base64 encryption key. An example key is
+ ```
+/g1xCS33QYGC+F2s016WXaQWT8ICnzJvdqcVltNtWljrkCyjd5Ut4tvy2d/IgNga0uniZxv/t0hELdZmvx+cdA==
+```
+- edit the cloudburst.yml file, and change the core api url to the url your Api will be accessible from. Sample:```earth-api: "192.168.1.1/1/api"```
+
 - Start up the Api
 - Start up cloudburst. After a short while the Api should mention a server being connected.
 - If you run into issues, retrace your steps, or [contact us on discord](https://discord.gg/Zf9aYZACU4)

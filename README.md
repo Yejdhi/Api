@@ -1,3 +1,4 @@
+English | [简体中文](https://github.com/ENDERMANYK/Api/blob/master/README_CN.md)
 ## Project Earth API
 The Core API for Project Earth
 
@@ -49,7 +50,8 @@ worlds:
  ```
 /g1xCS33QYGC+F2s016WXaQWT8ICnzJvdqcVltNtWljrkCyjd5Ut4tvy2d/IgNga0uniZxv/t0hELdZmvx+cdA==
 ```
-- Also in the `GenoaAllocatorPlugin` folder, make a `ip.txt` file containing your local IPV4, Sample:`192.168.1.1`
+- Also in the `GenoaAllocatorPlugin` folder, make a `ip.txt` file containing your local IPV4, Sample:`192.168.1.1`.
+- Open the `server.properties` file, change the line 9 to `spawn-protection=0`, line 14 to `gamemode=1`, line 24 to `xbox-auth=false`.
 - On the API side:
 - Go to `data/config/apiconfig.json`, and add the following at the end of file:
 ```json

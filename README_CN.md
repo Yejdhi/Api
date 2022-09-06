@@ -34,7 +34,8 @@ API处理大部分游戏功能 - 除了AR模式.
 ### 获取CloudBurst部分
 
 **这部分是支持AR的，如果你设备不支持AR无需配置**
-
+- **你需要Java 8来运行CloudBurst**
+- **如果你不知道如何操作，[Release](https://github.com/ENDERMANYK/Api/releases)里有已经配置好的文件，你只需要设置连接服务即可。**
 - 使用此[Cloudburst](https://github.com/Project-Earth-Team/Server)分支. 你可以在这里找到编译好的文件 [点我](https://ci.rtm516.co.uk/job/ProjectEarth/job/Server/job/earth-inventory/).
 - 运行一次 Cloudburst 以生成文件.
 - 在plugins文件夹里, 你需要 [GenoaPlugin](https://github.com/jackcaver/GenoaPlugin), 和 [GenoaAllocatorPlugin](https://github.com/jackcaver/GenoaAllocatorPlugin). 你可以在这里找到编译好的文件 [点我](https://github.com/jackcaver/GenoaPlugin/actions/workflows/CI.yml) and [点我](https://github.com/jackcaver/GenoaAllocatorPlugin/actions/workflows/CI.yml). **注: 务必重命名 GenoaAllocatorPlugin.jar 为 ZGenoaAllocatorPlugin.jar, 否则你将会遇到Class加载问题**

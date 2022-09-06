@@ -29,6 +29,8 @@ The core API handles the bulk of game functionality - pretty much everything tha
 
 ### Getting the CloudBurst Part
 **Only do this if you want play AR game instead setup a server.**
+- **You need Java 8 to run the CloudBurst.**
+- **You can also skip this part if you download the preset version from [Release](https://github.com/ENDERMANYK/Api/releases).**
 - Our fork of [Cloudburst](https://github.com/Project-Earth-Team/Server). Builds of this can be found [here](https://ci.rtm516.co.uk/job/ProjectEarth/job/Server/job/earth-inventory/). This jar can be located elsewhere from the API things.
 - Run Cloudburst once to generate the file structure.
 - In the plugins folder, you'll need [GenoaPlugin](https://github.com/jackcaver/GenoaPlugin), and [GenoaAllocatorPlugin](https://github.com/jackcaver/GenoaAllocatorPlugin). The CI for this can be found [here](https://github.com/jackcaver/GenoaPlugin/actions/workflows/CI.yml) and [here](https://github.com/jackcaver/GenoaAllocatorPlugin/actions/workflows/CI.yml). **Note: make sure to rename your GenoaAllocatorPlugin.jar to ZGenoaAllocatorPlugin.jar, or you will run into issues with class loading** 

@@ -17,15 +17,15 @@ API处理大部分游戏功能 - 除了AR模式.
 
 ### 获取API部分
 
-- 获取已经编译好的文件 [Release](https://github.com/ENDERMANYK/Api/releases)
-- 获取数据文件[ApiData](https://github.com/ENDERMANYK/ApiData), 你同时也需要 Minecraft Earth 资源包 , 将下载下来的文件重命名为 `vanilla.zip` 并放置于 `data/resourcepacks` 文件夹下(如果不存在自己创建一个)
+- 获取已经编译好的文件 [Release](https://github.com/ENDERMANYK/Api/releases)或者从jackcaver的[Actions](https://github.com/jackcaver/Api/actions)中获取
+- 获取数据文件[ApiData](https://github.com/jackcaver/ApiData), 将其重命名为data，并将其放置于API执行文件旁边。你同时也需要 Minecraft Earth 资源包 , 将下载下来的文件重命名为 `vanilla.zip` 并放置于 `data/resourcepacks` 文件夹下(如果不存在自己创建一个)
 - 你可以从此处获取资源包 [点我](https://web.archive.org/web/20210624200250if_/https://cdn.mceserv.net/availableresourcepack/resourcepacks/dba38e59-091a-4826-b76a-a08d7de5a9e2-1301b0c257a311678123b9e7325d0d6c61db3c35).
 
 ### 设置
 
 - API方面:
 - 前往 `data/config/apiconfig.json`, 将 `"baseServerIP"` 那一行后面改为你的本地IPV4地址 示例:`"baseServerIP": "http://192.168.1.1"`
-- 启动API
+- 双击exe启动API
 - 现在你需要让Minecraft Earth与API连接. 安卓设备可以使用补丁程序 [源码](https://github.com/Project-Earth-Team/PatcherApp), 你可以在这里找到编译好的文件[点我](https://ci.rtm516.co.uk/job/ProjectEarth/job/PatcherApp/job/master/lastBuild/).
 - 启动补丁APP, 点击右上角的三个点, 将你在`data/config/apiconfig.json` 输入的IP输入进**Locator Server**, 示例:`http://192.168.1.1`
 - 点击补丁程序中间的 **PATCH AND INSTALL**, 等待完成并安装 Project Earth应用.

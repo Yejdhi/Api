@@ -14,8 +14,8 @@ The core API handles the bulk of game functionality - pretty much everything tha
 
 ### Getting the API Part
 
-- A built copy of the Api, which you can download from [Release](https://github.com/ENDERMANYK/Api/releases)
-- The [ApiData](https://github.com/ENDERMANYK/ApiData) repo, you'll also need the Minecraft Earth resource pack file, renamed to `vanilla.zip` and placed in the `data/resourcepacks` folder of the ApiData repo. 
+- A built copy of the Api, which you can download from [Release](https://github.com/ENDERMANYK/Api/releases) or jackcaver's [Actions](https://github.com/jackcaver/Api/actions)
+- Clone the [ApiData](https://github.com/jackcaver/ApiData) repo, Rename your clone to `data`, and place it next to your Api executable, you'll also need the Minecraft Earth resource pack file, renamed to `vanilla.zip` and placed in the `data/resourcepacks` folder of the ApiData repo. 
 - You can procure the resourcepack from [here](https://web.archive.org/web/20210624200250if_/https://cdn.mceserv.net/availableresourcepack/resourcepacks/dba38e59-091a-4826-b76a-a08d7de5a9e2-1301b0c257a311678123b9e7325d0d6c61db3c35).
 
 ### Setting up
